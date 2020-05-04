@@ -1,48 +1,82 @@
 import React, { Component } from "react";
 import Title from "./title";
-import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
+import { FaPlaneArrival, FaTrain, FaShuttleVan, FaBeer, FaCar, FaFileExcel } from "react-icons/fa";
+
+
 export default class Services extends Component {
   state = {
     services: [
       {
-        icon: <FaCocktail />,
-        title: "free cocktails",
+        icon: <FaPlaneArrival size='2x'/>,
+        title: "By Plane",
         info: "Free cocktails on demand. Tasteful choices"
       },
       {
-        icon: <FaHiking />,
-        title: "endless Hiking",
+        icon: <FaTrain size='2x'/>,
+        title: "By Train",
         info:
           "Together with our experts everyday we have hiking through Zanka Mountain"
       },
       {
-        icon: <FaShuttleVan />,
-        title: "free shuttle",
+        icon: <FaCar size='2x'/>,
+        title: "By Automobile",
         info:
-          "Airport to Hotel or Hotel to Airport. Any time free shutle service"
-      },
-      {
-        icon: <FaBeer />,
-        title: "Strongest Beer",
-        info: "Taste our best beer"
+          "Airport to Hotel or Hotel to Airport. Any time free shuttle service"
       }
+      
     ]
   };
   render() {
+    const containerStyle = {
+      position: 'relative',
+      display: 'flex',
+      margin: 'auto',
+      justifyContent: 'space-evenly',
+      flexDirection: 'row'
+    }
+    const cardStyle = {
+      paddingTop: '50px',
+      paddingBottom: '50px',
+      position: 'relative',
+      display: 'flex',
+      
+      flexDirection: 'column',
+      maxWidth: '360px',
+      justifyContent: 'space-between'
+    }
+    const elementStyle = {
+      display: 'flex',
+      position: 'relative',
+      flexDirection: 'row'
+    }
+    
+    
     return (
-      <section className="services">
-        <Title title="services"></Title>
-        <div className="services-center">
+      <section style={containerStyle}>
+        
           {this.state.services.map((item, index) => {
             return (
-              <article key={index} className="service">
-                <span>{item.icon}</span>
-                <h6>{item.title}</h6>
-                <p>{item.info}</p>
-              </article>
+              
+              <div  style={cardStyle}>
+                <div style={elementStyle}>
+                  {/* <span>{item.icon}</span> */}
+                  <svg width="222" height="222" viewBox="0 0 1024 1024">
+                    {item.icon}
+                  </svg>
+                </div>
+                  {/* <Icon services>{item.icon}</Icon> */}
+                <div style={elementStyle}>
+                  <h6>{item.title}</h6>
+                </div>
+                <div style={elementStyle}>
+                  <p>{item.info}</p>
+                </div>
+              </div>
+                
+
             );
           })}
-        </div>
+        
       </section>
     );
   }
