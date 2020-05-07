@@ -50,9 +50,21 @@ const SectionWipesStyled = styled.div`
         background-color: yellow;
     }
   }
-  .swipeSection {
-      height: 360px;
+  .swipeSection-stand {
+      height: 300px;
       margin: 90px 0px 90px 0px;
+  }
+  .swipeSection-top {
+    height: 300px;
+    margin: 90px 0px 45px 0px;
+  }
+  .swipeSection-middle {
+    height: 300px;
+    margin: 45px 0px 45px 0px;
+  }
+  .swipeSection-bottom {
+    height: 300px;
+    margin: 45px 0px 90px 0px;
   }
   
   .timeline {
@@ -76,8 +88,8 @@ const SectionWipesStyled = styled.div`
     }
 
     .panel {
-        height: 360px;
-        width: 100vw;
+        height: 300px;
+        
         text-align: center;
     }
     
@@ -95,11 +107,11 @@ const SectionWipesStyled = styled.div`
     
     .panel.turqoise {
         
-        background-color: hsl(60, 4%, 85%);
+        background-color: #f7f2ea;
     }
     
     .panel.green {
-        background-color: hsl(60, 4%, 85%);
+        background-color: #f7f2ea;
         //background-color: #d7f1f3;
         //background-color: #22d659;
         // margin-bottom: 800px;
@@ -117,27 +129,29 @@ const SectionWipesStyled = styled.div`
         align-items: center;
         margin: auto;
         flex-wrap: wrap;
-        min-width: 320px;
-        max-width: 1220px;
+        min-width: 300px;
+        max-width: 900px;
         top: 81px;
+        height: 100%;
+        background-color: hsl(60, 4%, 85%);
     }
     .flex-item {
-        height: 120px;
+        //height: 180px;
         width: 300px;
-        // background-color: #e46119;
+        opacity: 0;
         // border: 1px solid #626262;
         margin: auto;
-        padding: 81px 0 0 18px;
+        //padding: 60px;
         text-align: center;
         font-size: 1.8rem;
     }
     .flex-item2 {
-        height: 120px;
-        width: 300px;
+        height: 300px;
+
         // background-color: #e46119;
         // border: 1px solid #626262;
-        margin: auto;
-        padding: 36px 0 0 18px;
+        //margin: auto;
+        //padding: 60px;
         text-align: center;
     }
     .bolder {
@@ -145,22 +159,13 @@ const SectionWipesStyled = styled.div`
         font-size: 2rem;
 
     }
-    .churchImg {
+    .sizeImg {
         height: 300px;
     }
-        
-        flex-wrap: wrap;
-        min-width: 320px;
-        max-width: 1220px;
-     }
-     .flex-item {
-        height: 120px;
-        width: 300px;
-        background-color: #e46119;
-        border: 1px solid #626262;
-        margin: 3px;
-        padding: 10px 0 0 10px;
-     }
+    h3 {
+        font-size: 1.5rem;
+    }
+
     
 
 `;
@@ -186,24 +191,26 @@ const Events = ({data}) => {
            
             <SectionWipesStyled>
             <h1 className="timeline">October 29th: Day Before</h1>
-                <div className="swipeSection">
+                <div className="swipeSection-stand">
                     {/* <div id="trigger" /> */}
                     <Controller globalSceneOptions={{ triggerHook: 0.18, vertical: false }}>                       
                         <Scene triggerElement=".timeline" duration="27%" indicators={true}>         
-                            <Tween from={{ x: '100%' }} to={{ x: '0%' }}>
+                            
                                 <section className="panel turqoise">
                                 
                                     <div className="flex-container">
-                                        <div className="flex-item">
-                                            <h3 className="bolder">Welcome Cocktails @ 7PM</h3>
-                                            <h3>The W Hotel Rooftop Bar</h3>
-                                            <h3>Directions: Google Link</h3>
-                                        </div>
-                                        <div className="flex-item2"><img src={Board} /></div>          
+                                        <Tween from={{ opacity: '0' }} to={{ opacity: '1' }}>
+                                            <div className="flex-item">
+                                                <h3 className="bolder">Welcome Cocktails @ 7PM</h3>
+                                                <h3>The W Hotel Rooftop Bar</h3>
+                                                <h3>Directions: Google Link</h3>
+                                            </div>
+                                        </Tween>
+                                        <div className="flex-item2"><img className="sizeImg" src={Board} /></div>          
                                     </div>
                                     
                                 </section>
-                            </Tween>
+                            
                         </Scene>
                     </Controller>
                 </div>
@@ -211,20 +218,20 @@ const Events = ({data}) => {
             
             <SectionWipesStyled>
             <h1 className="timeline2">October 30th: Wedding Day</h1>
-                <div className="swipeSection">
+                <div className="swipeSection-top">
                     {/* <div id="trigger" /> */}
                     <Controller globalSceneOptions={{ triggerHook: 0.36, vertical: false }}>                       
                         <Scene triggerElement=".timeline2" duration="27%" indicators={true}>         
-                            <Tween from={{ x: '-100%' }} to={{ x: '0%' }}>
+                            <Tween from={{ x: '0%' }} to={{ x: '0%' }}>
                                 <section className="panel green">
                                 
                                     <div className="flex-container">
+                                        <div className="flex-item2"><img className="sizeImg" src={Church} /></div>          
                                         <div className="flex-item">
                                             <h3 className="bolder">Wedding Ceremony @ 3PM</h3>
                                             <h3>St. Peter's Church on Capitol Hill</h3>
                                             <h3>Directions: Google Link</h3>
                                         </div>
-                                        <div className="flex-item2"><img className="churchImg" src={Church} /></div>          
                                     </div>
                                     
                                 </section>
@@ -235,11 +242,11 @@ const Events = ({data}) => {
             </SectionWipesStyled>
 
             <SectionWipesStyled>
-                <div className="swipeSection" id="trigger3">
+                <div className="swipeSection-middle" id="trigger3">
                     {/* <div id="trigger" /> */}
                     <Controller globalSceneOptions={{ triggerHook: 0.36, vertical: false }}>                       
                         <Scene triggerElement="#trigger3" duration="27%" indicators={true}>         
-                            <Tween from={{ x: '100%' }} to={{ x: '0%' }}>
+                            <Tween from={{ x: '0%' }} to={{ x: '0%' }}>
                                 <section className="panel turqoise">
                                 
                                     <div className="flex-container">
@@ -248,7 +255,7 @@ const Events = ({data}) => {
                                             <h3>Daughters of the American Revolution</h3>
                                             <h3>Directions: Google Link</h3>
                                         </div>
-                                        <div className="flex-item2"><img src={Platter} /></div>          
+                                        <div className="flex-item2"><img className="sizeImg" src={Platter} /></div>          
                                     </div>
                                     
                                 </section>
@@ -258,24 +265,26 @@ const Events = ({data}) => {
                 </div>
             </SectionWipesStyled>
             <SectionWipesStyled>
-                <div className="swipeSection" id="trigger4">
+                <div className="swipeSection-bottom" id="trigger4">
                     {/* <div id="trigger" /> */}
                     <Controller globalSceneOptions={{ triggerHook: 0.36, vertical: false }}>                       
                         <Scene triggerElement="#trigger4" duration="27%" indicators={true}>         
-                            <Tween from={{ x: '-100%' }} to={{ x: '0%' }}>
+                            
                                 <section className="panel green">
                                 
                                     <div className="flex-container">
+                                        <Tween from={{ opacity: '0.45' }} to={{ opacity: '1' }}>
+                                            <div className="flex-item2"><img className="sizeImg" src={DAR} /></div> 
+                                        </Tween>   
                                         <div className="flex-item">
                                             <h3 className="bolder">Wedding Reception @ 6PM</h3>
                                             <h3>Daughters of the American Revolution</h3>
                                             <h3>Directions: Google Link</h3>
-                                        </div>
-                                        <div className="flex-item2"><img src={DAR} /></div>          
+                                        </div>      
                                     </div>
                                     
                                 </section>
-                            </Tween>
+                            
                         </Scene>
                     </Controller>
                 </div>
@@ -283,11 +292,11 @@ const Events = ({data}) => {
 
             <SectionWipesStyled>
             <h1 className="timeline3">October 31th: Halloween</h1>
-                <div className="swipeSection">
+                <div className="swipeSection-stand">
                     {/* <div id="trigger" /> */}
                     <Controller globalSceneOptions={{ triggerHook: 0.36, vertical: false }}>                       
                         <Scene triggerElement=".timeline3" duration="27%" indicators={true}>         
-                            <Tween from={{ x: '100%' }} to={{ x: '0%' }}>
+                            <Tween from={{ x: '0%' }} to={{ x: '0%' }}>
                                 <section className="panel turqoise">
                                 
                                     <div className="flex-container">
@@ -296,7 +305,7 @@ const Events = ({data}) => {
                                             <h3>Calico Beer Garden</h3>
                                             <h3>Directions: Google Link</h3>
                                         </div>
-                                        <div className="flex-item2"><img className="churchImg" src={Calico} /></div>          
+                                        <div className="flex-item2"><img className="sizeImg" src={Calico} /></div>          
                                     </div>
                                     
                                 </section>

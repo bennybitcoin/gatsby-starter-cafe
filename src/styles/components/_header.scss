@@ -84,6 +84,9 @@ header {
   text-decoration: none;
   font-family: 'MrsEavesRoman';
 }
+.headerMenu li a:hover {
+  color: chocolate;
+}
 @media (max-width: $maxWidth) {
   .headerMenu li a {
     padding: 3px 10px 5px 0;
@@ -111,7 +114,7 @@ li a {
 h1 {
   font-family: 'Burgues';
   font-size: 1.45rem;
-  text-align:-webkit-center;
+  text-align: center;
 }
 h4 {
   font-family: 'MrsEavesItalic';

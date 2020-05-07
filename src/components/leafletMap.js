@@ -10,7 +10,7 @@ class LeafletMap extends React.Component {
 
     /** Initial zoom level for the map (default 13) **/
     zoom: PropTypes.number,
-
+    scrollWheelZoom: false
     /** If set, will display a marker, which when clicked will display this text **/
     // markerText: PropTypes.string
   }
@@ -30,6 +30,7 @@ class LeafletMap extends React.Component {
     content2: "St. Peter's Church on Capitol Hill",
     position3: [38.896994, -77.033426],
     content3: "W Hotel",
+    scrollWheelZoom: false
 
     
   }
@@ -37,11 +38,8 @@ class LeafletMap extends React.Component {
   render() {
 
       return (
-        <Map center={this.props.position} zoom={this.props.zoom}>
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
-          />
+        <Map center={this.props.position} zoom={this.props.zoom} scrollWheelZoom={this.props.scrollWheelZoom} >
+          <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'"/>
          
           {this.props.markerText !== "" &&
           <Marker position={this.props.position1}>

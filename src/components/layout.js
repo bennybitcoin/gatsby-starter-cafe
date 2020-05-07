@@ -16,12 +16,12 @@ const Layout = ({ children }) => {
   const headerProps = {
     navItems: [
       { link: "/", name: "Home"},
-      { link: "events", name: "Events"},
+      { link: "events", name: "Timeline"},
       { link: "accomodations", name: "Travel"},
       { link: "registry", name: "Registry"},
-      { link: "RSVP", name: "RSVP"},
       { link: "Wedding Party", name: "Wedding Party"},
-      { link: "Other Details", name: "Other Details"}
+      { link: "RSVP", name: "RSVP"},
+      // { link: "Other Details", name: "Other Details"}
     ]
   }
   const data = useStaticQuery(graphql`
