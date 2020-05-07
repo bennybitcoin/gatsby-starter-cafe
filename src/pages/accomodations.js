@@ -11,6 +11,12 @@ const Accomodations = ({data}) => {
     return (
         <Layout>
             <SEO title="Accomodations" />
+            
+
+            <div className="title">
+                  
+            </div>
+            <Services></Services>
             <Hero>
                 <Banner title="Hotel Options" subtitle="Group Rates available with our code">
                     {/* <Link to="/rooms" className="btn-primary">
@@ -18,11 +24,6 @@ const Accomodations = ({data}) => {
                     </Link> */}
                 </Banner>
             </Hero>
-
-            <div className="title">
-
-            </div>
-            <Services></Services>
             <OurHotels></OurHotels>
             <Footer />
         </Layout>
