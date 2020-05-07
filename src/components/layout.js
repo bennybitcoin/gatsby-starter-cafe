@@ -19,8 +19,8 @@ const Layout = ({ children }) => {
       { link: "events", name: "Timeline"},
       { link: "accomodations", name: "Travel"},
       { link: "registry", name: "Registry"},
-      { link: "Wedding Party", name: "Wedding Party"},
-      { link: "RSVP", name: "RSVP"},
+      //{ link: "Wedding Party", name: "Wedding Party"},
+      // { link: "RSVP", name: "RSVP"},
       // { link: "Other Details", name: "Other Details"}
     ]
   }

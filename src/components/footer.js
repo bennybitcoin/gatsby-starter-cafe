@@ -1,28 +1,26 @@
 import React from 'react'
 
+
 const Footer = () => {
 
   return (
     <footer>
       <section>
-        <div className="address">
-          <h3>WHERE ARE WE?</h3>
-          <span>65 Park Row</span>
-          <span>Edinburgh, EH1 4PE</span>
+        <div className="container">
+          <h3>CLOSEST AIRPORT?</h3>
+          <span>Ronald Reagan Washington National Airport (DCA)</span>
         </div>
-        <div className="hours">
-          <h3>HOURS</h3>
-          <span>Weekdays / 8-5</span>
-          <span>Weekdays / 10-5</span>
+        <div className="container">
+          <h3>DRESS CODE</h3>
+          <span>Black Tie Optional</span>
         </div>
-        <div className="contact">
+        <div className="container">
           <h3>CONTACT</h3>
-          <span>01632 960966</span>
-          <span>@yourSocialName</span>
+          <span>weddingbenlily@gmail.com</span>
         </div>
       </section>
       <p>Built by
-        <a href="https://crollacreations.com" target="_blank" rel="noopener noreferrer">crollacreations</a>
+        <a href="https://www.github.com/bennybitcoin" target="_blank" rel="noopener noreferrer">@bennybitcoin</a>
       </p>
     </footer>
   )

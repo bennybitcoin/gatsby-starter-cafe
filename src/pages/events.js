@@ -138,7 +138,7 @@ const SectionWipesStyled = styled.div`
     .flex-item {
         //height: 180px;
         width: 300px;
-        opacity: 0;
+        //opacity: 0;
         // border: 1px solid #626262;
         margin: auto;
         //padding: 60px;
@@ -193,24 +193,25 @@ const Events = ({data}) => {
             <h1 className="timeline">October 29th: Day Before</h1>
                 <div className="swipeSection-stand">
                     {/* <div id="trigger" /> */}
-                    <Controller globalSceneOptions={{ triggerHook: 0.18, vertical: false }}>                       
+                    <Controller globalSceneOptions={{ triggerHook: -0.2, vertical: false }}>                       
                         <Scene triggerElement=".timeline" duration="27%" indicators={true}>         
-                            
+                            <Tween from={{ opacity: '1' }} to={{ opacity: '1' }}>
                                 <section className="panel turqoise">
-                                
+                                ,
                                     <div className="flex-container">
-                                        <Tween from={{ opacity: '0' }} to={{ opacity: '1' }}>
+                                        
                                             <div className="flex-item">
                                                 <h3 className="bolder">Welcome Cocktails @ 7PM</h3>
                                                 <h3>The W Hotel Rooftop Bar</h3>
                                                 <h3>Directions: Google Link</h3>
                                             </div>
-                                        </Tween>
+                                       
                                         <div className="flex-item2"><img className="sizeImg" src={Board} /></div>          
                                     </div>
                                     
+                                    
                                 </section>
-                            
+                            </Tween>
                         </Scene>
                     </Controller>
                 </div>
@@ -220,9 +221,9 @@ const Events = ({data}) => {
             <h1 className="timeline2">October 30th: Wedding Day</h1>
                 <div className="swipeSection-top">
                     {/* <div id="trigger" /> */}
-                    <Controller globalSceneOptions={{ triggerHook: 0.36, vertical: false }}>                       
+                    <Controller globalSceneOptions={{ triggerHook: 0.02, vertical: false }}>                       
                         <Scene triggerElement=".timeline2" duration="27%" indicators={true}>         
-                            <Tween from={{ x: '0%' }} to={{ x: '0%' }}>
+                            <Tween from={{ opacity: '1' }} to={{ opacity: '1' }}>
                                 <section className="panel green">
                                 
                                     <div className="flex-container">
@@ -244,9 +245,9 @@ const Events = ({data}) => {
             <SectionWipesStyled>
                 <div className="swipeSection-middle" id="trigger3">
                     {/* <div id="trigger" /> */}
-                    <Controller globalSceneOptions={{ triggerHook: 0.36, vertical: false }}>                       
+                    <Controller globalSceneOptions={{ triggerHook: 0.02, vertical: false }}>                       
                         <Scene triggerElement="#trigger3" duration="27%" indicators={true}>         
-                            <Tween from={{ x: '0%' }} to={{ x: '0%' }}>
+                            <Tween from={{ opacity: '1' }} to={{ opacity: '1' }}>
                                 <section className="panel turqoise">
                                 
                                     <div className="flex-container">
@@ -267,13 +268,13 @@ const Events = ({data}) => {
             <SectionWipesStyled>
                 <div className="swipeSection-bottom" id="trigger4">
                     {/* <div id="trigger" /> */}
-                    <Controller globalSceneOptions={{ triggerHook: 0.36, vertical: false }}>                       
+                    <Controller globalSceneOptions={{ triggerHook: 0.02, vertical: false }}>                       
                         <Scene triggerElement="#trigger4" duration="27%" indicators={true}>         
                             
                                 <section className="panel green">
                                 
                                     <div className="flex-container">
-                                        <Tween from={{ opacity: '0.45' }} to={{ opacity: '1' }}>
+                                        <Tween from={{ opacity: '1' }} to={{ opacity: '1' }}>
                                             <div className="flex-item2"><img className="sizeImg" src={DAR} /></div> 
                                         </Tween>   
                                         <div className="flex-item">
@@ -294,9 +295,9 @@ const Events = ({data}) => {
             <h1 className="timeline3">October 31th: Halloween</h1>
                 <div className="swipeSection-stand">
                     {/* <div id="trigger" /> */}
-                    <Controller globalSceneOptions={{ triggerHook: 0.36, vertical: false }}>                       
+                    <Controller globalSceneOptions={{ triggerHook: 0.02, vertical: false }}>                       
                         <Scene triggerElement=".timeline3" duration="27%" indicators={true}>         
-                            <Tween from={{ x: '0%' }} to={{ x: '0%' }}>
+                            <Tween from={{ opacity: '1' }} to={{ opacity: '1' }}>
                                 <section className="panel turqoise">
                                 
                                     <div className="flex-container">
